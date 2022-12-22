@@ -1,3 +1,3 @@
 # Módulo React - Entregable 2
 
-Entregable 1 del módulo de React - Academlo
+Entregable 2 del módulo de React - Academlo
