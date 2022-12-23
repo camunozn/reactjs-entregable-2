@@ -6,7 +6,16 @@ function App() {
 
   return (
     <div className="App">
-      <h1>React - Entregable 2</h1>
+      <header>
+        <div className="app-logo"></div>
+        <nav className="main-nav"></nav>
+        <div className="menu-mobile"></div>
+      </header>
+      <main>
+        <section className="section-summary"></section>
+        <section className="section-details"></section>
+        <section className="section-options"></section>
+      </main>
     </div>
   );
 }
