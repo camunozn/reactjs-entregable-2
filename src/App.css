@@ -12,3 +12,23 @@ body {
   color: #fff;
   background-color: #222;
 }
+
+.header {
+  background-color: lightcoral;
+}
+
+.section-summary {
+  background-color: goldenrod;
+}
+
+.section-details {
+  background-color: lightgreen;
+}
+
+.section-options {
+  background-color: lightblue;
+}
+
+.footer {
+  background-color: lightpink;
+}
