@@ -25,15 +25,23 @@ function App() {
       </header>
       <main>
         <section className="section-summary">
-          <div className="summary-city">Quito, Ecuador</div>
-          <div className="summary-degrees">Icono + 24ºC</div>
-          <div className="summary-climate">Sunny H: 28º L:15º</div>
+          <div className="summary-city">
+            <h2>Quito, Ecuador</h2>
+          </div>
+          <div className="summary-degrees">
+            <img src="" alt="Icono clima" />
+            <p>24ºC</p>
+          </div>
+          <div className="summary-climate">
+            <p>Sunny</p>
+            <p>H: 28º | L: 15º</p>
+          </div>
         </section>
         <section className="section-details">
-          <div className="details-box detail--1">Precipitation</div>
-          <div className="details-box detail--2">UV index</div>
-          <div className="details-box detail--3">Wind speed</div>
-          <div className="details-box detail--4">Pressure</div>
+          <div className="details-box detail--1">Box Component</div>
+          <div className="details-box detail--2">Box Component</div>
+          <div className="details-box detail--3">Box Component</div>
+          <div className="details-box detail--4">Box Component</div>
         </section>
         <section className="section-options">
           <div className="options-location">Location</div>
