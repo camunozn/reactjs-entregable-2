@@ -13,17 +13,82 @@ body {
   background-color: #222;
 }
 
-.header {
-  background-color: lightcoral;
+/**********************/
+/* GENERAL COMPONENTS */
+/**********************/
+.App {
+  max-width: 110rem;
+  margin: 0 auto;
 }
+
+.flex {
+  display: flex;
+  align-items: center;
+}
+
+.grid {
+  display: grid;
+  justify-content: space-between;
+  justify-items: center;
+  row-gap: 2rem;
+}
+
+.grid--2--columns {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.heading-primary {
+  font-size: 1.6rem;
+}
+
+/*******************/
+/* SECTION HEADER */
+/*******************/
+
+.header {
+  background-color: #444;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.main-nav {
+  display: flex;
+}
+
+.main-nav-link {
+  display: inline-block;
+}
+
+.main-nav-link a:link,
+.main-nav-link a:visited {
+  color: #fff;
+}
+
+.main-nav-link a:hover,
+.main-nav-link a:active {
+  color: #888;
+}
+
+/*******************/
+/* SECTION SUMMARY */
+/*******************/
 
 .section-summary {
   background-color: goldenrod;
 }
 
+/*******************/
+/* SECTION DETAILS */
+/*******************/
+
 .section-details {
   background-color: lightgreen;
 }
+
+/*******************/
+/* SECTION OPTIONS */
+/*******************/
 
 .section-options {
   background-color: lightblue;
@@ -31,4 +96,75 @@ body {
 
 .footer {
   background-color: lightpink;
+}
+
+/********************/
+/* REACT COMPONENTS */
+/********************/
+
+/****************************/
+/* ROUNDED SWITCH COMPONENT */
+/****************************/
+
+/* The switch - the box around the slider */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 3rem;
+  height: 1.7rem;
+}
+
+/* Hide default HTML checkbox */
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* The slider */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #2196f3;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 1.3rem;
+  width: 1.3rem;
+  left: 2px;
+  bottom: 2px;
+  background-color: white;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+input:checked + .slider {
+  background-color: #2196f3;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #2196f3;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(1.3rem);
+  -ms-transform: translateX(1.3rem);
+  transform: translateX(1.3rem);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 1.7rem;
+}
+
+.slider.round:before {
+  border-radius: 50%;
 }
