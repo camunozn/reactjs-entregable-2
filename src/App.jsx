@@ -6,6 +6,11 @@ import RoundedSwitch from "./assets/components/RoundedSwitch";
 
 function App() {
   const [weatherData, setWeatherData] = useState({});
+  const [toggleDegrees, setToggleDegrees] = useState(false);
+
+  const handleDegreesChange = function () {
+    setToggleDegrees(!toggleDegrees);
+  };
 
   useEffect(() => {
     function success(position) {
@@ -49,14 +54,23 @@ function App() {
                   alt="Icono clima"
                 />
                 <p className="degrees-text">
-                  {Math.round(weatherData.main?.temp)}ºC
+                  {!toggleDegrees
+                    ? `${Math.round(weatherData.main?.temp)} ºC`
+                    : `${Math.round((weatherData.main?.temp * 9) / 5 + 32)} ºF`}
                 </p>
               </div>
               <div className="summary-climate flex">
                 <p className="climate-text">{weatherData.weather?.[0].main}</p>
                 <p className="climate-hilow">
-                  H: {Math.round(weatherData.main?.temp_max)}º | L:{" "}
-                  {Math.round(weatherData.main?.temp_min)}º
+                  {!toggleDegrees
+                    ? `H: ${Math.round(
+                        weatherData.main?.temp_max
+                      )}º | L: ${Math.round(weatherData.main?.temp_min)}º`
+                    : `H: ${Math.round(
+                        (weatherData.main?.temp_max * 9) / 5 + 32
+                      )}º | L: ${Math.round(
+                        (weatherData.main?.temp_min * 9) / 5 + 32
+                      )}º`}
                 </p>
               </div>
             </div>
@@ -70,7 +84,7 @@ function App() {
               />
               <DetailBox
                 title={"Humidity"}
-                icon={"fa-solid fa-sun-plant-wilt"}
+                icon={"fa-solid fa-droplet"}
                 detail={`${weatherData.main?.humidity} %`}
               />
               <DetailBox
@@ -102,7 +116,10 @@ function App() {
                 <h3 className="heading-tertiary">Units</h3>
                 <div className="units-degrees grid grid--3--columns">
                   <p className="degrees-unit unit--left">ºC</p>
-                  <RoundedSwitch />
+                  <RoundedSwitch
+                    toggleSwitch={toggleDegrees}
+                    handleChange={handleDegreesChange}
+                  />
                   <p className="degrees-unit unit--right">ºF</p>
                 </div>
                 <div className="units-speed grid grid--3--columns">
