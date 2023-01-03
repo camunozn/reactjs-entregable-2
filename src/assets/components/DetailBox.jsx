@@ -3,11 +3,13 @@ import "../../App.css";
 
 function DetailBox({ title, icon, detail }) {
   return (
-    <div className="DetailBox">
-      <h3 className="heading-tertiary">{title}</h3>
-      <div className="container grid grid--2--columns">
-        <i className={icon}></i>
-        <p>{detail}</p>
+    <div className="Box">
+      <div className="detail-box flex">
+        <h3 className="heading-tertiary">{title}</h3>
+        <div className="detail-data flex">
+          <i className={icon}></i>
+          <p>{detail}</p>
+        </div>
       </div>
     </div>
   );

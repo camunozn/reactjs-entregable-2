@@ -3,7 +3,7 @@ import "../../App.css";
 
 function RoundedSwitch() {
   return (
-    <div className="RoundedSwitch">
+    <div className="Switch">
       <label className="switch">
         <input type="checkbox" />
         <span className="slider round"></span>
