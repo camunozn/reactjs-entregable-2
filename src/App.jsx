@@ -5,13 +5,23 @@ import DetailBox from "./assets/components/DetailBox";
 import RoundedSwitch from "./assets/components/RoundedSwitch";
 
 function App() {
+  //Variables declaration
+  const imgArray = [
+    { condition: "Thunderstorm", img: "/src/assets/img/thunderstorm.jpg" },
+    { condition: "Drizzle", img: "/src/assets/img/drizzle.jpg" },
+    { condition: "Rain", img: "/src/assets/img/rain.jpg" },
+    { condition: "Snow", img: "/src/assets/img/snow.jpg" },
+    { condition: "Clear", img: "/src/assets/img/clear.jpg" },
+    { condition: "Clouds", img: "/src/assets/img/clouds.jpg" },
+  ];
   const [weatherData, setWeatherData] = useState({});
   const [toggleDegrees, setToggleDegrees] = useState(false);
-
+  //handler functions
   const handleDegreesChange = function () {
     setToggleDegrees(!toggleDegrees);
   };
 
+  //Load weather data
   useEffect(() => {
     function success(position) {
       const { coords } = position;
@@ -27,6 +37,12 @@ function App() {
     }
     navigator.geolocation.getCurrentPosition(success, error);
   }, []);
+
+  // Change image backgroud
+  const imgEl = imgArray.find(
+    (el) => el.condition === weatherData.weather?.[0].main
+  );
+  document.body.style.backgroundImage = `url(${imgEl?.img})`;
 
   return (
     <div className="App">
@@ -107,7 +123,7 @@ function App() {
                 </div>
                 <div className="location-search flex">
                   <i className="fa-solid fa-magnifying-glass"></i>
-                  <input type="text" />
+                  <input className="search-input" type="text" />
                 </div>
               </div>
               <div className="options options-units">
