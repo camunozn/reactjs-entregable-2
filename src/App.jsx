@@ -4,15 +4,22 @@ import "./App.css";
 import DetailBox from "./assets/components/DetailBox";
 import RoundedSwitch from "./assets/components/RoundedSwitch";
 
+import thunderstorm from "./assets/img/thunderstorm.jpg";
+import drizzle from "./assets/img/drizzle.jpg";
+import rain from "./assets/img/rain.jpg";
+import snow from "./assets/img/snow.jpg";
+import clear from "./assets/img/clear.jpg";
+import clouds from "./assets/img/clouds.jpg";
+
 function App() {
   //Variables declaration
   const imgArray = [
-    { condition: "Thunderstorm", img: "/src/assets/img/thunderstorm.jpg" },
-    { condition: "Drizzle", img: "/src/assets/img/drizzle.jpg" },
-    { condition: "Rain", img: "/src/assets/img/rain.jpg" },
-    { condition: "Snow", img: "/src/assets/img/snow.jpg" },
-    { condition: "Clear", img: "/src/assets/img/clear.jpg" },
-    { condition: "Clouds", img: "/src/assets/img/clouds.jpg" },
+    { condition: "Thunderstorm", img: thunderstorm },
+    { condition: "Drizzle", img: drizzle },
+    { condition: "Rain", img: rain },
+    { condition: "Snow", img: snow },
+    { condition: "Clear", img: clear },
+    { condition: "Clouds", img: clouds },
   ];
   const [weatherData, setWeatherData] = useState({});
   const [toggleDegrees, setToggleDegrees] = useState(false);
