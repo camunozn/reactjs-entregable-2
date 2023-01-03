@@ -10,7 +10,7 @@ function App() {
   useEffect(() => {
     axios
       .get(
-        "https://api.openweathermap.org/data/2.5/weather?lat=51.51&lon=-0.13&appid=852a367fa6c1539099cab7030f736988&units=metric"
+        "https://api.openweathermap.org/data/2.5/weather?lat=44.34&lon=10.99&appid=852a367fa6c1539099cab7030f736988&units=metric"
       )
       .then((res) => setWeatherData(res.data));
   }, []);
