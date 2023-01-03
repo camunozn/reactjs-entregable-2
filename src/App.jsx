@@ -1,5 +1,5 @@
-import axios from "axios";
 import { useEffect, useState } from "react";
+import axios from "axios";
 import "./App.css";
 import DetailBox from "./assets/components/DetailBox";
 import RoundedSwitch from "./assets/components/RoundedSwitch";
