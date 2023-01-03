@@ -28,8 +28,6 @@ function App() {
     navigator.geolocation.getCurrentPosition(success, error);
   }, []);
 
-  console.log(weatherData);
-
   return (
     <div className="App">
       <>
